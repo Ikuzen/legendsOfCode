@@ -32,7 +32,6 @@ class Card {
         if (this.cardType === 0) return (this.attack + this.defense) / (this.cost + 1) + this.getAbilitiesScore();
     }
     getAbilitiesScore = () => {
-        // if (card.cardType === 0) {
         let abilities: string[] = this.abilities.split('');
         let score = 0;
         for (let ability of abilities) {
@@ -59,13 +58,8 @@ class Card {
                     break;
             }
         }
-        // check for bonus score
         if (abilities.includes('W') && abilities.includes('L')) score += 2
         return score;
-        // }
-        // else {
-        //     return 5; //generic score for now;
-        // }
     }
 }
 
@@ -77,8 +71,6 @@ let deckCurve = {
 };
 // game loop
 while (true) {
-
-
 
     function checkForLethal() { }
 
@@ -379,6 +371,5 @@ else {
 
         playString ? console.log(playString) : console.log('PASS')
     }
-}
 }
 
